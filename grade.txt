@@ -1,0 +1,4 @@
+grade: 3/4
+
+cannot make an array sized array in standard C. They have to be compile time known sizes.
+

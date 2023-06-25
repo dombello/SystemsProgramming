@@ -1,0 +1,70 @@
+QUIZ 5
+
+Name: Dominick Bello
+Grade:
+
+Date out: 31 oct
+Date due:  4 nov
+
+This is an exercise in virtual memory. You are to fill out
+the page tables for two processes.
+
+We are taking the example of paging in a 16 bit architecture.
+It will have 1024 byte pages. 
+
+1. Hence the lower 10 bits of the  address are offsets in
+   a page and the upper 6 bits are the page frame number. 
+
+2. Hence there are 64 pages. 
+
+We round up to one byte PTE's. The layout of the PTE's are:
+
+  
+   +---+---+---+---+---+---+---+---+
+   | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+   +---+---+---+---+---+---+---+---+
+   
+   7 = Valid bit. 0 if invalid PTE, 1 if valid
+   6 = reserver
+   5-0 = 16 bit page frame number
+   
+3. Since there are 64 pages, each page table is 1024 bytes,
+   and therefore  16 page tables fit in one page.
+
+The operating system will occupy the top 1/4 of memory, 
+for both its program and data. Since 16 bits is 65,536 
+(64k).
+
+4. The size of virtual space dedicated to the operating 
+   system is 16,000 K byes. The virtual address space for 
+   each user is 48,000 K bytes.
+   
+You are to fill out the page tables given the following scenario.
+I have already filled out the page table for two processes with
+the mapping for the operating system. I have claimed 16 pages
+marking them with a 1 in the frame database, and filled out the 
+frame number with the valid bit set in each of the page tables
+for the two processes.
+
+5. Each process initially gets 4 K of stack, and 4 K of heap; 
+   Process A goes first and also gets 24 K of program and 4 K 
+   of BSS. Then process B gets 16 K of program and 2 K of BSS.
+   
+   (To help the grader, assume allocation by the lowest numbered
+   free frame first, first allocating text, then BSS, then heap, 
+   then stack).
+   
+6. During the running of process A and B, first Process A does a 
+   sbrk and request 8 more K of Heap. Then Process B needs another 
+   4 K of stack. 
+   
+Show the result in the excel file.
+
+
+   
+
+   
+   
+
+   
+   
